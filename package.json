@@ -1,0 +1,21 @@
+{
+  "name": "simple-chart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "Sergey Petushkov <petushkov.sergey@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "jest": "^22.4.2"
+  },
+  "dependencies": {
+    "chalk": "^2.3.2",
+    "randomcolor": "^0.5.3",
+    "window-size": "^1.1.0"
+  }
+}
