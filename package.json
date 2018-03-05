@@ -2,7 +2,8 @@
   "name": "simple-chart",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "bin": "bin/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest"
   },
@@ -15,6 +16,7 @@
   },
   "dependencies": {
     "chalk": "^2.3.2",
+    "mri": "^1.1.0",
     "randomcolor": "^0.5.3",
     "window-size": "^1.1.0"
   }
