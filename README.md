@@ -14,19 +14,19 @@ npm i -g wunder-bar
 echo "[1, 2, 3, 4, 5]" | wunder-bar --min 0
 ```
 
-![wunder-bar-simple]('./wunder-bar-simple.png')
+![wunder-bar-simple](./wunder-bar-simple.png)
 
 ```
 cat data.json | wunder-bar --min 0
 ```
 
-![wunder-bar-cli]('./wunder-bar-cli.png')
+![wunder-bar-cli](./wunder-bar-cli.png)
 
 ```
 cat data.json | wunder-bar --min 0 --sort min --view condensed
 ```
 
-![wunder-bar-cli-condensed]('./wunder-bar-cli-condensed.png')
+![wunder-bar-cli-condensed](./wunder-bar-cli-condensed.png)
 
 ## Use in your code
 
