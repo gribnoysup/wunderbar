@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`normalizers createNormalizeValue normalizeValue should prepare data for drawing 1`] = `
+Object {
+  "color": "red",
+  "label": "0-14",
+  "lineLength": 100,
+  "normalizedValue": 10333117,
+  "rawValue": 10333117,
+}
+`;
+
+exports[`normalizers normalizeOptions should normalize min, max and length to numbers, if strings are provided 1`] = `
+Object {
+  "length": 42,
+  "max": 13.5,
+  "min": 1.23,
+  "randomColorOptions": Object {},
+  "sort": "none",
+  "type": "normal",
+}
+`;
+
+exports[`normalizers normalizeOptions should return default values if options are empty 1`] = `
+Object {
+  "length": undefined,
+  "max": undefined,
+  "min": undefined,
+  "randomColorOptions": Object {},
+  "sort": "none",
+  "type": "normal",
+}
+`;
+
+exports[`normalizers normalizeOptions should throw if length is not a number 1`] = `"Unexpected options.length: [Function]. Expected number"`;
+
+exports[`normalizers normalizeOptions should throw if max is not a number 1`] = `"Unexpected options.max: {}. Expected number"`;
+
+exports[`normalizers normalizeOptions should throw if min is not a number 1`] = `"Unexpected options.min: []. Expected number"`;
+
+exports[`normalizers normalizeOptions should throw if randomColorOptions is not an object 1`] = `"Unexpected options.randomColorOptions: null. Expected object with randomcolor options (https://github.com/davidmerfield/randomColor#options)"`;
+
+exports[`normalizers normalizeOptions should throw if sort is not a function 1`] = `"Unexpected options.sort: {}. Expected function or \\"min\\" | \\"max\\" | \\"none\\""`;
+
+exports[`normalizers normalizeOptions should throw if sort type is not supported 1`] = `"Unexpected options.sort: \\"magic\\". Expected function or \\"min\\" | \\"max\\" | \\"none\\""`;
+
+exports[`normalizers normalizeOptions should throw if type is not supported 1`] = `"Unexpected options.type: \\"boring\\". Expected \\"normal\\" | \\"condensed\\""`;
+
+exports[`normalizers normalizeValues should normalize Array<number> to Array<{ value: number }> 1`] = `
+Array [
+  Object {
+    "value": 1,
+  },
+  Object {
+    "value": 2,
+  },
+  Object {
+    "value": 3,
+  },
+]
+`;
+
+exports[`normalizers normalizeValues should normalize Array<string> to Array<{ value: number }> 1`] = `
+Array [
+  Object {
+    "value": 1,
+  },
+  Object {
+    "value": 2,
+  },
+  Object {
+    "value": 3,
+  },
+]
+`;
+
+exports[`normalizers normalizeValues should throw if there is no value key in values 1`] = `"Unexpected value { \\"rabbit\\": 1 } in \\"values\\" argument. Expected { value: number, color?: string, label?: string }"`;
+
+exports[`normalizers normalizeValues should throw if values are not numbers 1`] = `"Unexpected value \\"foo\\" in \\"values\\" argument. Expected { value: number, color?: string, label?: string }"`;
+
+exports[`normalizers normalizeValues should throw if values is not an array 1`] = `"Unexpected \\"values\\" argument \\"foo\\". Expected Array<{ value: number, color?: string, label?: string }>"`;

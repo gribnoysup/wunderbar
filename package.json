@@ -1,18 +1,28 @@
 {
   "name": "wunder-bar",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple horizontal bar chart drawer for your terminal",
   "bin": "bin/index.js",
   "main": "lib/index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --env node"
   },
-  "keywords": [],
+  "keywords": [
+    "nodejs",
+    "cli",
+    "bar",
+    "chart",
+    "bar-chart",
+    "terminal",
+    "library"
+  ],
   "author": "Sergey Petushkov <petushkov.sergey@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "eslint": "^4.18.2",
-    "jest": "^22.4.2"
+    "eslint-plugin-jest": "^21.13.0",
+    "jest": "^22.4.2",
+    "strip-ansi": "^4.0.0"
   },
   "dependencies": {
     "chalk": "^2.3.2",
