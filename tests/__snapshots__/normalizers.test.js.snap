@@ -17,7 +17,7 @@ Object {
   "min": 1.23,
   "randomColorOptions": Object {},
   "sort": "none",
-  "type": "normal",
+  "view": "normal",
 }
 `;
 
@@ -28,7 +28,7 @@ Object {
   "min": undefined,
   "randomColorOptions": Object {},
   "sort": "none",
-  "type": "normal",
+  "view": "normal",
 }
 `;
 
@@ -44,7 +44,7 @@ exports[`normalizers normalizeOptions should throw if sort is not a function 1`]
 
 exports[`normalizers normalizeOptions should throw if sort type is not supported 1`] = `"Unexpected options.sort: \\"magic\\". Expected function or \\"min\\" | \\"max\\" | \\"none\\""`;
 
-exports[`normalizers normalizeOptions should throw if type is not supported 1`] = `"Unexpected options.type: \\"boring\\". Expected \\"normal\\" | \\"condensed\\""`;
+exports[`normalizers normalizeOptions should throw if view is not supported 1`] = `"Unexpected options.view: \\"boring\\". Expected \\"normal\\" | \\"condensed\\""`;
 
 exports[`normalizers normalizeValues should normalize Array<number> to Array<{ value: number }> 1`] = `
 Array [

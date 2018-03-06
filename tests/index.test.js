@@ -10,6 +10,6 @@ describe('draw', () => {
   };
 
   it('should provide result with chart, scale and legend', () => {
-    expect(outputResult(data)).toMatchSnapshot();
+    expect(outputResult(data, { length: 100 })).toMatchSnapshot();
   });
 });

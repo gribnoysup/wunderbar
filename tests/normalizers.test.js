@@ -34,9 +34,9 @@ describe('normalizers', () => {
   });
 
   describe('normalizeOptions', () => {
-    it('should throw if type is not supported', () => {
+    it('should throw if view is not supported', () => {
       expect(() =>
-        normalizeOptions({ type: 'boring' })
+        normalizeOptions({ view: 'boring' })
       ).toThrowErrorMatchingSnapshot();
     });
 
