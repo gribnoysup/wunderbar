@@ -10,8 +10,15 @@ process.stdin.on('data', chunk => {
 });
 
 process.stdin.on('end', () => {
-  const { type, min, max, length } = mri(process.argv.slice(2));
-  const { chart, scale, legend } = draw(JSON.parse(data), { type, min, max, length });
+  const { type, sort, min, max, length } = mri(process.argv.slice(2));
+
+  const { chart, scale, legend } = draw(JSON.parse(data), {
+    type,
+    sort,
+    min,
+    max,
+    length,
+  });
 
   process.stdout.write('\n');
   process.stdout.write([chart, scale, legend, ''].join('\n\n'));
