@@ -1,5 +1,5 @@
 {
-  "name": "wunder-bar",
+  "name": "@gribnoysup/wunderbar",
   "version": "1.0.0",
   "description": "Simple horizontal bar chart drawer for your terminal",
   "bin": "bin/index.js",
@@ -33,5 +33,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/gribnoysup/wunder-bar.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,4 +1,4 @@
-# wunder-bar
+# @gribnoysup/wunderbar
 
 Have you ever wanted to print some pretty bar charts in your terminal? You are
 in the right place!
@@ -10,19 +10,24 @@ building blocks to print chart yourself.
 ## Use in terminal
 
 ```
-echo "[1, 2, 3, 4, 5]" | wunder-bar --min 0
+# Install it first
+npm i -g @gribnoysup/wunderbar
+```
+
+```
+echo "[1, 2, 3, 4, 5]" | @gribnoysup/wunderbar --min 0
 ```
 
 ![wunder-bar-simple](./wunder-bar-simple.png)
 
 ```
-cat data.json | wunder-bar --min 0
+cat data.json | @gribnoysup/wunderbar --min 0
 ```
 
 ![wunder-bar-cli](./wunder-bar-cli.png)
 
 ```
-cat data.json | wunder-bar --min 0 --sort min --view condensed
+cat data.json | @gribnoysup/wunderbar --min 0 --sort min --view condensed
 ```
 
 ![wunder-bar-cli-condensed](./wunder-bar-cli-condensed.png)
@@ -30,11 +35,11 @@ cat data.json | wunder-bar --min 0 --sort min --view condensed
 ## Use in your code
 
 ```
-npm i --save wunder-bar
+npm i --save @gribnoysup/wunderbar
 ```
 
 ```js
-const wunderbar = require('wunder-bar');
+const wunderbar = require('@gribnoysup/wunderbar');
 const data = require('./data.json');
 
 const printData = () => {
@@ -85,7 +90,7 @@ All options are also supported in the cli version:
 
 ```
 echo "[10, 30, 50, 70, 90, 110]" | \
-  wunder-bar --view normal --min 0 --max 100  --length 42 --sort min --randomColorOptions '{ "seed": "unicorn" }';
+  @gribnoysup/wunderbar --view normal --min 0 --max 100  --length 42 --sort min --randomColorOptions '{ "seed": "unicorn" }';
 ```
 
 ![wunder-bar-simple](./wunder-bar-cli-all.png)
