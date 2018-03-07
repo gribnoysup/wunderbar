@@ -4,6 +4,10 @@
   "description": "Simple horizontal bar chart drawer for your terminal",
   "bin": "bin/index.js",
   "main": "lib/index.js",
+  "files": [
+    "bin",
+    "lib"
+  ],
   "scripts": {
     "test": "jest --env node"
   },
