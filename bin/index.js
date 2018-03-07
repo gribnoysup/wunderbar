@@ -10,7 +10,7 @@ process.stdin.on('data', chunk => {
 });
 
 process.stdin.on('end', () => {
-  const { view, sort, min, max, length, randomColorOptions: opts } = mri(
+  const { view, sort, min, max, length, randomColorOptions: opts = '{}' } = mri(
     process.argv.slice(2)
   );
 
