@@ -10,24 +10,19 @@ building blocks to print chart yourself.
 ## Use in terminal
 
 ```
-# Install it first
-npm i -g @gribnoysup/wunderbar
-```
-
-```
-echo "[1, 2, 3, 4, 5]" | @gribnoysup/wunderbar --min 0
+echo "[1, 2, 3, 4, 5]" | npx @gribnoysup/wunderbar --min 0
 ```
 
 ![wunder-bar-simple](./wunder-bar-simple.png)
 
 ```
-cat data.json | @gribnoysup/wunderbar --min 0
+cat data.json | npx @gribnoysup/wunderbar --min 0
 ```
 
 ![wunder-bar-cli](./wunder-bar-cli.png)
 
 ```
-cat data.json | @gribnoysup/wunderbar --min 0 --sort min --view condensed
+cat data.json | npx @gribnoysup/wunderbar --min 0 --sort min --view condensed
 ```
 
 ![wunder-bar-cli-condensed](./wunder-bar-cli-condensed.png)
@@ -90,7 +85,7 @@ All options are also supported in the cli version:
 
 ```
 echo "[10, 30, 50, 70, 90, 110]" | \
-  @gribnoysup/wunderbar --view normal --min 0 --max 100  --length 42 --sort min --randomColorOptions '{ "seed": "unicorn" }';
+  npx @gribnoysup/wunderbar --view normal --min 0 --max 100  --length 42 --sort min --randomColorOptions '{ "seed": "unicorn" }'
 ```
 
 ![wunder-bar-simple](./wunder-bar-cli-all.png)
