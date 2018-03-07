@@ -64,7 +64,7 @@ printData();
 * `"condensed"` chart view uses half box symbols to squash two chart bars to one
   line. Quality of the output is heavily dependant on your terminal font
   settings. Also min to max charts are looking much more prettier than the other
-  way around in this mode ¯\_(ツ)\_/¯. **Use with caution**
+  way around in this mode ¯\\_(ツ)\_/¯. **Use with caution**
 
 ## API
 
