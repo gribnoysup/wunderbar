@@ -3,7 +3,7 @@
 Have you ever wanted to print some pretty bar charts in your terminal? You are
 in the right place!
 
-Wunderbar can print horisontal bar chart with legend and chart scale straight to
+Wunderbar can print horizontal bar chart with legend and chart scale straight to
 your terminal. Or you can use it as a module in your code and get all the
 building blocks to print chart yourself.
 
