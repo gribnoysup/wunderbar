@@ -64,22 +64,22 @@ printData();
 * `"condensed"` chart view uses half box symbols to squash two chart bars to one
   line. Quality of the output is heavily dependant on your terminal font
   settings. Also min to max charts are looking much more prettier than the other
-  way around in this mode ¯\\_(ツ)\_/¯. **Use with caution**
+  way around in this mode ¯\\\_(ツ)\_/¯. **Use with caution**
 
 ## API
 
 ### wunderbar(values, [options]) ⇒ [`OutputValue`][4]
 
-| Param                        | Type                                                                           | Default               | Description                                   |
-| ---------------------------- | ------------------------------------------------------------------------------ | --------------------- | --------------------------------------------- |
-| values                       | [`Array<InputValue>`][3]                                                       |                       | Values to draw on a chart                     |
-| [options]                    | `Object`                                                                       |                       | Chart drawing options                         |
-| [options.view]               | `"normal" | "condensed"`                                                       | `"normal"`            | Chart view type                               |
-| [options.min]                | `number`                                                                       | min value from values | Min chart value (inclusive)                   |
-| [options.max]                | `number`                                                                       | max value from values | Max chart value (inclusive)                   |
-| [options.length]             | `number`                                                                       | terminal width        | Chart length                                  |
-| [options.sort]               | `"min" | "max" | "none" | (a: NormalizedValue, b: NormalizedValue) => boolean` | `"none"`              | Sort method for chart values                  |
-| [options.randomColorOptions] | `Object`                                                                       | `{}`                  | [randomColor options][2] for color generation |
+| Param                        | Type                                                                                                     | Default               | Description                                   |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------- | --------------------------------------------- |
+| values                       | `Array<InputValue>`                                                                                      |                       | Values to draw on a chart                     |
+| [options]                    | `Object`                                                                                                 |                       | Chart drawing options                         |
+| [options.view]               | <code>"normal" &#124; "condensed"</code>                                                                 | `"normal"`            | Chart view type                               |
+| [options.min]                | `number`                                                                                                 | min value from values | Min chart value (inclusive)                   |
+| [options.max]                | `number`                                                                                                 | max value from values | Max chart value (inclusive)                   |
+| [options.length]             | `number`                                                                                                 | terminal width        | Chart length                                  |
+| [options.sort]               | <code>"min" &#124; "max" &#124; "none" &#124; (a: NormalizedValue, b: NormalizedValue) => boolean</code> | `"none"`              | Sort method for chart values                  |
+| [options.randomColorOptions] | `Object`                                                                                                 | `{}`                  | [randomColor options][2] for color generation |
 
 All options are also supported in the cli version:
 
