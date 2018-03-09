@@ -15,7 +15,15 @@ describe('draw', () => {
     expect(outputResult(data, { length: 100 })).toMatchSnapshot();
   });
 
+  it('should provide result custom value formatter', () => {
+    expect(
+      outputResult(data, { length: 100, format: () => 'meow :3' })
+    ).toMatchSnapshot();
+  });
+
   it('should provide result with prettified values and sorted charts', () => {
-    expect(outputResult(smallData, { length: 100, format: '0.0e+0', sort: 'max' })).toMatchSnapshot();
+    expect(
+      outputResult(smallData, { length: 100, format: '0.0e+0', sort: 'max' })
+    ).toMatchSnapshot();
   });
 });

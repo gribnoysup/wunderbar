@@ -1,5 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`draw should provide result custom value formatter 1`] = `
+"
+█████████
+
+████████████████████████████████████████████████████████████████████████████████████████████████████
+███████████████
+███████████████████████████████████████
+
+◺ meow :3                                                                                  meow :3 ◿
+
+█ -  0-14 meow :3
+█ - 15-24 meow :3
+█ - 25-54 meow :3
+█ - 55-64 meow :3
+█ -   65+ meow :3
+"
+`;
+
 exports[`draw should provide result with chart, scale and legend 1`] = `
 "
 █████████
