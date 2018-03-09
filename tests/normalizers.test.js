@@ -70,6 +70,12 @@ describe('normalizers', () => {
       ).toThrowErrorMatchingSnapshot();
     });
 
+    it('should throw if format is not a string or a function', () => {
+      expect(() =>
+        normalizeOptions({ format: null })
+      ).toThrowErrorMatchingSnapshot();
+    });
+
     it('should throw if randomColorOptions is not an object', () => {
       expect(() =>
         normalizeOptions({ randomColorOptions: null })
@@ -89,10 +95,11 @@ describe('normalizers', () => {
 
   describe('createNormalizeValue', () => {
     const colors = ['red', 'blue', 'green', 'pink', 'yellow'];
+    const valueFormatter = value => `meow ${value.toFixed(2)}`;
     const chartLength = 100;
 
     const createNormalize = (min, max) =>
-      createNormalizeValue(min, max, chartLength, colors);
+      createNormalizeValue(min, max, chartLength, colors, valueFormatter);
 
     describe('normalizeValue', () => {
       it('should prepare data for drawing', () => {
@@ -100,7 +107,7 @@ describe('normalizers', () => {
         expect(normalized(data[0], 0)).toMatchSnapshot();
       });
 
-      it('should cap data value my maxValue', () => {
+      it('should cap data value by maxValue', () => {
         const normalized = createNormalize(0, 500);
         expect(normalized(data[0], 0).normalizedValue).toEqual(500);
       });
@@ -117,6 +124,13 @@ describe('normalizers', () => {
 
         // Expecting chartLength here because maxValue of chart is the same as data value
         expect(normalized(data[0], 0).lineLength).toEqual(chartLength);
+      });
+
+      it('should return formatted value', () => {
+        const normalized = createNormalize(0, data[0].value);
+        expect(normalized(data[0], 0).formattedValue).toEqual(
+          valueFormatter(data[0].value)
+        );
       });
     });
   });
