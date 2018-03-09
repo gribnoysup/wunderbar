@@ -15,9 +15,16 @@ describe('reducers', () => {
   const chartLength = 100;
   const minValue = 0;
   const maxValue = Math.max(...data.map(_ => _.value));
+  const valueFormatter = value => value.toFixed(2);
 
   const normalizedData = data.map(
-    createNormalizeValue(minValue, maxValue, chartLength, colors)
+    createNormalizeValue(
+      minValue,
+      maxValue,
+      chartLength,
+      colors,
+      valueFormatter
+    )
   );
 
   const dataThreeWays = [

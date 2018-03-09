@@ -10,20 +10,24 @@ process.stdin.on('data', chunk => {
 });
 
 process.stdin.on('end', () => {
-  const { view, sort, min, max, length, randomColorOptions: opts = '{}' } = mri(
-    process.argv.slice(2)
-  );
+  const options = mri(process.argv.slice(2));
+
+  const { randomColorOptions: opts = '{}' } = options;
+  const { view, sort, min, max, length, format } = options;
 
   const randomColorOptions = JSON.parse(opts);
 
-  const { chart, scale, legend } = draw(JSON.parse(data), {
+  const drawOptions = {
     view,
     sort,
     min,
     max,
     length,
+    format,
     randomColorOptions,
-  });
+  };
+
+  const { chart, scale, legend } = draw(JSON.parse(data), drawOptions);
 
   process.stdout.write('\n');
   process.stdout.write([chart, scale, legend, ''].join('\n\n'));

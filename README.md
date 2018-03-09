@@ -72,22 +72,23 @@ printData();
 
 ### wunderbar(values, [options]) ⇒ [`OutputValue`][4]
 
-| Param                        | Type                                                                                                     | Default               | Description                                   |
-| ---------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------- | --------------------------------------------- |
-| values                       | `Array<InputValue>`                                                                                      |                       | Values to draw on a chart                     |
-| [options]                    | `Object`                                                                                                 |                       | Chart drawing options                         |
-| [options.view]               | <code>"normal" &#124; "condensed"</code>                                                                 | `"normal"`            | Chart view type                               |
-| [options.min]                | `number`                                                                                                 | min value from values | Min chart value (inclusive)                   |
-| [options.max]                | `number`                                                                                                 | max value from values | Max chart value (inclusive)                   |
-| [options.length]             | `number`                                                                                                 | terminal width        | Chart length                                  |
-| [options.sort]               | <code>"min" &#124; "max" &#124; "none" &#124; (a: NormalizedValue, b: NormalizedValue) => boolean</code> | `"none"`              | Sort method for chart values                  |
-| [options.randomColorOptions] | `Object`                                                                                                 | `{}`                  | [randomColor options][2] for color generation |
+| Param                        | Type                                                                                                     | Default               | Description                                                           |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------- |
+| values                       | `Array<InputValue>`                                                                                      |                       | Values to draw on a chart                                             |
+| [options]                    | `Object`                                                                                                 |                       | Chart drawing options                                                 |
+| [options.view]               | <code>"normal" &#124; "condensed"</code>                                                                 | `"normal"`            | Chart view type                                                       |
+| [options.min]                | `number`                                                                                                 | min value from values | Min chart value (inclusive)                                           |
+| [options.max]                | `number`                                                                                                 | max value from values | Max chart value (inclusive)                                           |
+| [options.length]             | `number`                                                                                                 | terminal width        | Chart length                                                          |
+| [options.sort]               | <code>"min" &#124; "max" &#124; "none" &#124; (a: NormalizedValue, b: NormalizedValue) => boolean</code> | `"none"`              | Sort method for chart values                                          |
+| [options.randomColorOptions] | `Object`                                                                                                 | `{}`                  | [randomColor options][2] for color generation                         |
+| [options.format]             | <code>string &#124; (a: number) => string</code>                                                         | `"0.00"`              | Value format method. String values are [Numeral.js format][7] strings |
 
 All options are also supported in the cli version:
 
 ```
-echo "[10, 30, 50, 70, 90, 110]" | \
-  npx @gribnoysup/wunderbar --view normal --min 0 --max 100  --length 42 --sort min --randomColorOptions '{ "seed": "unicorn" }'
+echo "[1000, 3000, 5000, 7000, 9000, 11000]" | \
+  npx @gribnoysup/wunderbar --view normal --min 0 --max 10000 --length 42 --sort min --randomColorOptions '{ "seed": "unicorn" }' --format "0a"
 ```
 
 ![wunder-bar-simple](./wunder-bar-cli-all.png)
@@ -104,7 +105,7 @@ echo "[10, 30, 50, 70, 90, 110]" | \
 `{ chartLength: number, minValue: number, maxValue: number, normalizedValues: NormalizedValue[] }`
 
 <a name="#NormalizedValue">**NormalizedValue**</a> :
-`{ normalizedValue: number, rawValue: number, color: string, label: string, lineLength: number }`
+`{ normalizedValue: number, rawValue: number, formattedValue: string, color: string, label: string, lineLength: number }`
 
 [1]: https://github.com/chalk/chalk#256-and-truecolor-color-support
 [2]: https://github.com/davidmerfield/randomColor#options
@@ -112,6 +113,7 @@ echo "[10, 30, 50, 70, 90, 110]" | \
 [4]: #OutputValue
 [5]: #NormalizedValue
 [6]: #RawData
+[7]: http://numeraljs.com/#format
 
 ## License
 

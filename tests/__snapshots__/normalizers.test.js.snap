@@ -3,6 +3,7 @@
 exports[`normalizers createNormalizeValue normalizeValue should prepare data for drawing 1`] = `
 Object {
   "color": "red",
+  "formattedValue": "meow 10333117.00",
   "label": "0-14",
   "lineLength": 100,
   "normalizedValue": 10333117,
@@ -12,6 +13,7 @@ Object {
 
 exports[`normalizers normalizeOptions should normalize min, max and length to numbers, if strings are provided 1`] = `
 Object {
+  "format": "0.00",
   "length": 42,
   "max": 13.5,
   "min": 1.23,
@@ -23,6 +25,7 @@ Object {
 
 exports[`normalizers normalizeOptions should return default values if options are empty 1`] = `
 Object {
+  "format": "0.00",
   "length": undefined,
   "max": undefined,
   "min": undefined,
@@ -31,6 +34,8 @@ Object {
   "view": "normal",
 }
 `;
+
+exports[`normalizers normalizeOptions should throw if format is not a string or a function 1`] = `"Unexpected options.format: null. Expected function or string"`;
 
 exports[`normalizers normalizeOptions should throw if length is not a number 1`] = `"Unexpected options.length: [Function]. Expected number"`;
 

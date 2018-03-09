@@ -1,6 +1,6 @@
 {
   "name": "@gribnoysup/wunderbar",
-  "version": "1.0.4",
+  "version": "1.0.5-1",
   "description": "Simple horizontal bar chart drawer for your terminal",
   "bin": "bin/index.js",
   "main": "lib/index.js",
@@ -31,6 +31,7 @@
   "dependencies": {
     "chalk": "^2.3.2",
     "mri": "^1.1.0",
+    "numeral": "^2.0.6",
     "randomcolor": "^0.5.3",
     "window-size": "^1.1.0"
   },
