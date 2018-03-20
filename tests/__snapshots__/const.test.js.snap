@@ -1,5 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`getSymbolNormal should return correct symbol for partial values 1`] = `
+Array [
+  "",
+  "",
+  "▏",
+  "▎",
+  "▍",
+  "▌",
+  "▋",
+  "▊",
+  "▉",
+  "█",
+  "█",
+]
+`;
+
 exports[`sort methods max should sort values from maximum to minimum 1`] = `
 Array [
   Object {

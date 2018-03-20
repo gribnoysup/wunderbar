@@ -2,6 +2,7 @@
 const mri = require('mri');
 
 const draw = require('../lib');
+const { SYMBOLS } = require('../lib/const');
 
 let data = '';
 
@@ -29,6 +30,8 @@ process.stdin.on('end', () => {
 
   const { chart, scale, legend } = draw(JSON.parse(data), drawOptions);
 
-  process.stdout.write('\n');
-  process.stdout.write([chart, scale, legend, ''].join('\n\n'));
+  process.stdout.write(SYMBOLS.EOL);
+  process.stdout.write(
+    [chart, scale, legend, ''].join(SYMBOLS.EOL + SYMBOLS.EOL)
+  );
 });

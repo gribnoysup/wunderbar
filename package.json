@@ -4,10 +4,7 @@
   "description": "Simple horizontal bar chart drawer for your terminal",
   "bin": "bin/index.js",
   "main": "lib/index.js",
-  "files": [
-    "bin",
-    "lib"
-  ],
+  "files": ["bin", "lib"],
   "scripts": {
     "test": "jest --env node"
   },
@@ -32,8 +29,8 @@
     "chalk": "^2.3.2",
     "mri": "^1.1.0",
     "numeral": "^2.0.6",
-    "randomcolor": "^0.5.3",
-    "window-size": "^1.1.0"
+    "pad": "^2.0.3",
+    "randomcolor": "^0.5.3"
   },
   "repository": {
     "type": "git",
@@ -41,5 +38,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "engines": {
+    "node": ">= 6"
   }
 }
