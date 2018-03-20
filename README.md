@@ -98,7 +98,7 @@ echo "[1000, 3000, 5000, 7000, 9000, 11000]" | \
 `{ chartLength: number, minValue: number, minValueFormatted: string, maxValue: number, maxValueFormatted: string, normalizedValues: NormalizedValue[] }`
 
 <a name="#NormalizedValue">**NormalizedValue**</a> :
-`{ normalizedValue: number, rawValue: number, formattedValue: string, color: string, label: string, lineLength: number, chartBar: string }`
+`{ normalizedValue: number, rawValue: number, formattedValue: string, color: string, label: string, lineLength: number, chartBar: string, coloredChartBar: string }`
 
 [1]: https://github.com/chalk/chalk#256-and-truecolor-color-support
 [2]: https://github.com/davidmerfield/randomColor#options
