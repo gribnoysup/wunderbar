@@ -3,11 +3,16 @@
 Have you ever wanted to print some pretty bar charts in your terminal? You are
 in the right place!
 
-![wunder-bar-simple](./wunder-bar-cli-all.png)
+![wunder-bar-cli-all](./wunder-bar-cli-all.png)
 
 Wunderbar can print horisontal bar chart with legend and chart scale straight to
 your terminal. Or you can use it as a module in your code and get all the
 building blocks to print chart yourself.
+
+Wunderbar uses partial block characters (`▏▎▍▌▋▊▉█`) to print the most precise
+charts possible:
+
+![wunder-bar-precise](./wunder-bar-precise.png)
 
 ## Use in terminal
 
@@ -15,19 +20,13 @@ building blocks to print chart yourself.
 echo "[1, 2, 3, 4, 5]" | npx @gribnoysup/wunderbar --min 0
 ```
 
-![wunder-bar-simple](./wunder-bar-simple.png)
+![wunder-bar-echo-json](./wunder-bar-echo-json.png)
 
 ```
 cat data.json | npx @gribnoysup/wunderbar --min 0
 ```
 
-![wunder-bar-cli](./wunder-bar-cli.png)
-
-```
-cat data.json | npx @gribnoysup/wunderbar --min 0 --sort min --view condensed
-```
-
-![wunder-bar-cli-condensed](./wunder-bar-cli-condensed.png)
+![wunder-bar-cat-file](./wunder-bar-cat-file.png)
 
 ## Use in your code
 
@@ -57,16 +56,11 @@ printData();
 
 ## Limitations
 
-* Wunderbar supports only node >= 8
+* Wunderbar supports only node >= 6
 
 * Wunderbar uses [`chalk.hex`][1] to add color to your charts. Chalk is pretty
   smart to downgrade the color if it is not supported by your terminal, but
   output may vary in different terminals.
-
-* `"condensed"` chart view uses half box symbols to squash two chart bars to one
-  line. Quality of the output is heavily dependant on your terminal font
-  settings. Also min to max charts are looking much more prettier than the other
-  way around in this mode ¯\\\_(ツ)\_/¯. **Use with caution**
 
 ## API
 
@@ -76,7 +70,6 @@ printData();
 | ---------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------- | --------------------------------------------------------------------- |
 | values                       | `Array<InputValue>`                                                                                      |                       | Values to draw on a chart                                             |
 | [options]                    | `Object`                                                                                                 |                       | Chart drawing options                                                 |
-| [options.view]               | <code>"normal" &#124; "condensed"</code>                                                                 | `"normal"`            | Chart view type                                                       |
 | [options.min]                | `number`                                                                                                 | min value from values | Min chart value (inclusive)                                           |
 | [options.max]                | `number`                                                                                                 | max value from values | Max chart value (inclusive)                                           |
 | [options.length]             | `number`                                                                                                 | terminal width        | Chart length                                                          |
@@ -88,10 +81,10 @@ All options are also supported in the cli version:
 
 ```
 echo "[1000, 3000, 5000, 7000, 9000, 11000]" | \
-  npx @gribnoysup/wunderbar --view normal --min 0 --max 10000 --length 42 --sort min --randomColorOptions '{ "seed": "unicorn" }' --format "0a"
+  npx @gribnoysup/wunderbar --min 0 --max 15000 --length 42 --sort min --randomColorOptions '{ "seed": "unicorn" }' --format "0a"
 ```
 
-![wunder-bar-simple](./wunder-bar-cli-all.png)
+![wunder-bar-cli-all](./wunder-bar-cli-all.png)
 
 ### Types
 
@@ -102,10 +95,10 @@ echo "[1000, 3000, 5000, 7000, 9000, 11000]" | \
 `{ legend: string, scale: string, chart: string, __raw: RawData }`
 
 <a name="#RawData">**RawData**</a> :
-`{ chartLength: number, minValue: number, maxValue: number, normalizedValues: NormalizedValue[] }`
+`{ chartLength: number, minValue: number, minValueFormatted: string, maxValue: number, maxValueFormatted: string, normalizedValues: NormalizedValue[] }`
 
 <a name="#NormalizedValue">**NormalizedValue**</a> :
-`{ normalizedValue: number, rawValue: number, formattedValue: string, color: string, label: string, lineLength: number }`
+`{ normalizedValue: number, rawValue: number, formattedValue: string, color: string, label: string, lineLength: number, chartBar: string }`
 
 [1]: https://github.com/chalk/chalk#256-and-truecolor-color-support
 [2]: https://github.com/davidmerfield/randomColor#options

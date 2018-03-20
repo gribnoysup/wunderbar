@@ -34,12 +34,6 @@ describe('normalizers', () => {
   });
 
   describe('normalizeOptions', () => {
-    it('should throw if view is not supported', () => {
-      expect(() =>
-        normalizeOptions({ view: 'boring' })
-      ).toThrowErrorMatchingSnapshot();
-    });
-
     it('should throw if min is not a number', () => {
       expect(() =>
         normalizeOptions({ min: [] })
