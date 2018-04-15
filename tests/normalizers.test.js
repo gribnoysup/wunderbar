@@ -34,6 +34,12 @@ describe('normalizers', () => {
   });
 
   describe('normalizeOptions', () => {
+    it('should properly print NaN when in error message', () => {
+      expect(() =>
+        normalizeOptions({ min: NaN })
+      ).toThrowErrorMatchingSnapshot();
+    });
+
     it('should throw if min is not a number', () => {
       expect(() =>
         normalizeOptions({ min: [] })

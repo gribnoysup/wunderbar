@@ -24,6 +24,8 @@ Object {
 }
 `;
 
+exports[`normalizers normalizeOptions should properly print NaN when in error message 1`] = `"Unexpected options.min: NaN. Expected number"`;
+
 exports[`normalizers normalizeOptions should return default values if options are empty 1`] = `
 Object {
   "format": "0.00",
