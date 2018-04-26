@@ -73,7 +73,7 @@ printData();
 | [options.min]                | `number`                                                                                                 | min value from values | Min chart value (inclusive)                                           |
 | [options.max]                | `number`                                                                                                 | max value from values | Max chart value (inclusive)                                           |
 | [options.length]             | `number`                                                                                                 | terminal width        | Chart length                                                          |
-| [options.sort]               | <code>"min" &#124; "max" &#124; "none" &#124; (a: NormalizedValue, b: NormalizedValue) => boolean</code> | `"none"`              | Sort method for chart values                                          |
+| [options.sort]               | <code>"min" &#124; "max" &#124; "none" &#124; (a: NormalizedValue, b: NormalizedValue) => number</code> | `"none"`              | Sort method for chart values                                          |
 | [options.randomColorOptions] | `Object`                                                                                                 | `{}`                  | [randomColor options][2] for color generation                         |
 | [options.format]             | <code>string &#124; (a: number) => string</code>                                                         | `"0.00"`              | Value format method. String values are [Numeral.js format][7] strings |
 
